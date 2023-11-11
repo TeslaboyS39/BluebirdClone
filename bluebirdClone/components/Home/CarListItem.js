@@ -19,7 +19,7 @@ function CarListItem({ car, distance }) {
             <p>{car.desc}</p>
           </div>
           <h2 className="text-[18px] font-semibold">
-            Rp{(car.amount * distance).toFixed(0)}K
+            ${(car.amount * distance).toFixed(2)}
           </h2>
         </div>
       </div>

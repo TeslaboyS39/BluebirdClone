@@ -16,7 +16,7 @@ function Payment() {
   );
   const options = {
     mode: "payment",
-    payment_method_types: ["card", "cashapp", "link"],
+    // payment_method_types: ["card"], //somehow this part made payment process failed
     amount: Math.round(amount) * 100,
     currency: "usd",
   };

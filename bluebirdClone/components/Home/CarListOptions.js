@@ -8,19 +8,24 @@ function CarListOptions({ distance, item }) {
   const [activeIndex, setActiveIndex] = useState();
   const [selectedCar, setSelectedCar] = useState([]);
   const router = useRouter();
+
   return (
-    <div className="mt-5 p-5 overflow-auto h-[220px]">
+    <div className="mt-5 p-1 overflow-auto h-[27vh]">
       <h2 className="text-[22px] font-bold">Recommended</h2>
-      {CarListData.map((item, index) => (
+      {CarListData.map((car, index) => (
         <div
-          className={`cursor-pointer p-2 px-4 rounded-md border-black ${
-            activeIndex == index ? "border-[2px]" : null
+          key={index}
+          className={`cursor-pointer p-2 px-4 rounded-md ${
+            activeIndex === index
+              ? "border-[1px] border-black"
+              : "border-[1px] border-slate-50"
           }`}
           onClick={() => {
-            setSelectedCar(item);
+            setActiveIndex(index);
+            setSelectedCar(car);
           }}
         >
-          <CarListItem car={item} distance={distance} />
+          <CarListItem car={car} distance={distance} />
         </div>
       ))}
       {selectedCar?.name ? (
