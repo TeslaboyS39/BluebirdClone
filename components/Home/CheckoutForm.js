@@ -56,7 +56,8 @@ function CheckoutForm({ amount }) {
         clientSecret: secretKey,
         elements,
         confirmParams: {
-          return_url: "http://localhost:3000/",
+          // return_url: "http://localhost:3000/",
+          return_url: "https://bluebird-clone-ten.vercel.app/",
         },
       });
     });
